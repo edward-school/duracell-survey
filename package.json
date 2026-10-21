@@ -1,0 +1,19 @@
+{
+  "name": "duracell-family-survey",
+  "version": "1.0.0",
+  "description": "Live anonymous survey for the Duracell cell group (SIBKL) family meeting",
+  "main": "server.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node --no-warnings=ExperimentalWarning server.js",
+    "dev": "node --no-warnings=ExperimentalWarning --watch server.js",
+    "test:e2e": "node scripts/e2e-acceptance.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "qrcode": "^1.5.4"
+  }
+}

@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  --bg: #fbf7f1;
+  --bg-2: #f4ece1;
+  --surface: #ffffff;
+  --ink: #2b2622;
+  --muted: #645a51;
+  --line: #e7dccd;
+  --accent: #a94f2a;       /* terracotta – 5.6:1 on white */
+  --accent-ink: #ffffff;
+  --accent-soft: #f7e6dc;
+  --sage: #476452;         /* sage – 6.4:1 on white */
+  --sage-soft: #e4ece6;
+  --warn: #8a5a00;
+  --warn-soft: #fbf0d6;
+  --danger: #a12d2d;
+  --danger-soft: #f8e1e1;
+  --radius: 14px;
+  --shadow: 0 1px 2px rgba(43, 38, 34, .06), 0 6px 20px rgba(43, 38, 34, .06);
+  --font: 'Atkinson Hyperlegible', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --serif: 'Fraunces', Georgia, 'Iowan Old Style', serif;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.5 var(--font); }
+h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.2; margin: 0 0 .4em; letter-spacing: -.01em; }
+p { margin: 0 0 .8em; }
+a { color: var(--accent); }
+.muted { color: var(--muted); }
+.small { font-size: 14px; }
+.hidden { display: none !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+button, .btn {
+  font: inherit; cursor: pointer; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink);
+  border-radius: 999px; padding: 10px 18px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  text-decoration: none; transition: background .15s, border-color .15s, transform .05s;
+}
+button:hover, .btn:hover { border-color: #d3c3ae; }
+button:active { transform: translateY(1px); }
+button:focus-visible, .btn:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid #e2a17f; outline-offset: 2px; }
+button.primary, .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 700; }
+button.primary:hover { background: #95441f; }
+button.ghost { background: transparent; border-color: transparent; }
+button.danger { color: var(--danger); border-color: #e6bcbc; }
+button.danger.solid { background: var(--danger); color: #fff; border-color: var(--danger); }
+button:disabled { opacity: .5; cursor: not-allowed; }
+button.sm { min-height: 34px; padding: 5px 12px; font-size: 14px; }
+
+input[type=text], input[type=password], input[type=date], textarea, select {
+  font: inherit; color: var(--ink); background: var(--surface); border: 1.5px solid var(--line); border-radius: 10px; padding: 10px 12px; width: 100%;
+}
+textarea { resize: vertical; min-height: 120px; }
+label { display: block; }
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px; }
+.pill { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 999px; font-size: 13px; font-weight: 700; background: var(--bg-2); color: var(--muted); }
+.pill.open { background: var(--sage-soft); color: var(--sage); }
+.pill.closed { background: var(--accent-soft); color: var(--accent); }
+.pill.demo { background: var(--warn-soft); color: var(--warn); }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; display: inline-block; }
+
+.banner { padding: 10px 14px; border-radius: 10px; font-size: 15px; }
+.banner.warn { background: var(--warn-soft); color: #5e3d00; }
+.banner.err { background: var(--danger-soft); color: #6e1c1c; }
+.banner.ok { background: var(--sage-soft); color: #2d4537; }
+.demo-strip { background: repeating-linear-gradient(45deg, #fbf0d6, #fbf0d6 12px, #f6e5bb 12px, #f6e5bb 24px); color: #5e3d00; text-align: center; font-weight: 700; font-size: 14px; padding: 6px; }
+
+.toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: var(--ink); color: #fff; padding: 10px 18px; border-radius: 999px; font-size: 15px; z-index: 100; box-shadow: var(--shadow); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
